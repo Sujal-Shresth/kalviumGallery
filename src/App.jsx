@@ -1,10 +1,8 @@
 import './App.css';
 
-import data from './components/DataComponent';
-
-function App() {
+function App(props) {
   function createComp() {
-    return data.map((image) => {
+    return props.data.map((image) => {
       return (
         <img
           key={image.id}
@@ -16,7 +14,7 @@ function App() {
 
   return (
     <div id="functionalComponent">
-      <h3>Kalvium Gallery using functionalComponent</h3>
+      <h3>{props.title}</h3>
 
       <div className="grid">{createComp()}</div>
     </div>

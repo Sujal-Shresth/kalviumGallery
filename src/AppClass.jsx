@@ -2,11 +2,9 @@ import { Component } from "react";
 
 import "./App.css";
 
-import data from "./components/DataComponent";
-
 export default class AppClass extends Component {
   createComp() {
-    return data.map((image) => {
+    return this.props.data.map((image) => {
       return <img key={image.id} src={image.img} />;
     });
   }
@@ -14,7 +12,7 @@ export default class AppClass extends Component {
   render() {
     return (
       <div id="classComponent">
-        <h3>Kalvium Gallery Using classComponent</h3>
+        <h3>{this.props.title}</h3>
 
         <div className="grid">{this.createComp()}</div>
       </div>
